@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --c-dark: #212529;
+  --c-brand: #ff401d;
+  --c-brand-light: #cf3e24;
+  --c-brand-rgb: 0, 0, 0;
+  --c-body: #727272;
+  --font-base: "ClashDisplay", sans-serif;
+  --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+  --transition: all 0.5s ease;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background: #ececec;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-brand);
+}
+
+.blue-dark {
+  background-color: #263578;
+}
+
+.text-blue-dark {
+  color: #263578;
+}
+
+.dropdown-menu a:hover {
+  background-color: #263578 !important;
+  color: #fff;
+}
+
+/*------------ Login container ------------*/
+
+.box-area {
+  width: 930px;
+}
+
+/*------------ Right box ------------*/
+
+.right-box {
+  padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder {
+  font-size: 16px;
+}
+
+.rounded-4 {
+  border-radius: 20px;
+}
+
+.rounded-5 {
+  border-radius: 30px;
+}
+
+/* BTN */
+/* .btn-custom {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+} */
+
+.btn-brand {
+  background-color: var(--c-brand);
+  border-color: var(--c-brand);
+  color: white;
+}
+
+.btn-brand:hover {
+  background-color: var(--c-brand-light);
+  border-color: var(--c-brand-light);
+  color: white;
+}
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+
+  .left-box {
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .right-box {
+    padding: 20px;
+  }
+}
