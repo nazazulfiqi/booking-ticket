@@ -14,6 +14,7 @@ $judul = $r["title"];
 $kode_film = $r["kd_film"];
 $sinopsis = $r["sinopsis"];
 $seat = $r["seat"];
+$genre = $r["genre"];
 
 
 
@@ -25,11 +26,11 @@ if (isset($_POST['edit'])) {
     $judul = $_POST['title'];
     $sinopsis = $_POST['sinopsis'];
     $seat = $_POST['seat'];
-
+    $genre = $_POST['genre'];
 
     if ($namafile != '') {
         move_uploaded_file($source, $folder . $namafile);
-        $update = mysqli_query($conn, "UPDATE movies SET cover = '$namafile', kd_film = '$kode_film', title = '$judul', sinopsis = '$sinopsis', seat = '$seat' WHERE id = '" . $_GET['id'] . "'");
+        $update = mysqli_query($conn, "UPDATE movies SET cover = '$namafile', kd_film = '$kode_film', title = '$judul', sinopsis = '$sinopsis', seat = '$seat', genre = '$genre' WHERE id = '" . $_GET['id'] . "'");
         if (!$update) {
             echo "<script>
             alert('Film Gagal Diubah!');
@@ -42,7 +43,7 @@ if (isset($_POST['edit'])) {
             </script>";
         }
     } else {
-        $update = mysqli_query($conn, "UPDATE movies SET kd_film = '$kode_film', title = '$judul', sinopsis = '$sinopsis', seat = '$seat' WHERE id = '" . $_GET['id'] . "'");
+        $update = mysqli_query($conn, "UPDATE movies SET kd_film = '$kode_film', title = '$judul', sinopsis = '$sinopsis', seat = '$seat', genre = '$genre' WHERE id = '" . $_GET['id'] . "'");
         if (!$update) {
             echo "<script>
             alert('Film Gagal Diubah!');
@@ -112,6 +113,10 @@ if (isset($_POST['edit'])) {
                                 <div class=" input-box">
                                     <span class="details">Seat Available</span>
                                     <input type="number" placeholder="Masukkan Jumlah Kursi" name="seat" required value="<?= $seat ?>">
+                                </div>
+                                <div class=" input-box">
+                                    <span class="details">Genre</span>
+                                    <input type="text" placeholder="Masukkan Jumlah Kursi" name="genre" required value="<?= $genre ?>">
                                 </div>
 
                             </div>

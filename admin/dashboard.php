@@ -53,6 +53,7 @@ $query = mysqli_query($conn, "SELECT * FROM movies");
                         <div class="card-body p-0 py-2">
                             <h5 class="card-title"><?= $row['title'] ?></h5>
                             <p class="card-text"><?= $row['sinopsis'] ?></p>
+
                         </div>
                         <div class="d-flex justify-content-between pt-2">
 

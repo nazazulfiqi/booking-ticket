@@ -23,10 +23,12 @@ if (isset($_POST['tambah'])) {
     $judul = $_POST['title'];
     $sinopsis = $_POST['sinopsis'];
     $seat = $_POST['seat'];
+    $genre = $_POST['genre'];
+
 
     move_uploaded_file($source, $folder . $namafile);
 
-    $query = "INSERT INTO movies (id, cover, kd_film, title, sinopsis, seat) VALUES ('', '$namafile', '$kode_film', '$judul', '$sinopsis', '$seat' )";
+    $query = "INSERT INTO movies (id, cover, kd_film, title, sinopsis, seat, genre) VALUES ('', '$namafile', '$kode_film', '$judul', '$sinopsis', '$seat', '$genre' )";
 
     $tambah = mysqli_query($conn, $query);
 
@@ -91,6 +93,10 @@ if (isset($_POST['tambah'])) {
                                 <div class=" input-box">
                                     <span class="details">Seat Available</span>
                                     <input type="number" placeholder="Masukkan Jumlah Kursi" name="seat" required>
+                                </div>
+                                <div class=" input-box">
+                                    <span class="details">Genre</span>
+                                    <input type="text" placeholder="Masukkan Genre" name="genre" required>
                                 </div>
 
                             </div>
